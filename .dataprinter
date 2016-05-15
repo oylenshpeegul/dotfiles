@@ -1,0 +1,10 @@
+# https://metacpan.org/pod/Data::Printer#CUSTOMIZATION
+
+{
+	hash_separator => ' => ',  # what separates keys from values
+	class => {
+		show_methods => 'none' # 'all', 'none', 'public', 'private'
+	},
+ 
+};
+   
