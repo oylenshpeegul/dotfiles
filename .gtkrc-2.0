@@ -1,1 +1,21 @@
+# I've had mixed success with the Emacs theme in GTK. I have it set in both GTK
+#
+#   echo 'gtk-key-theme-name = "Emacs"' > .gtkrc-2.0
+#
+# and GNOME
+#
+#   gconftool-2 --set /desktop/gnome/interface/gtk_key_theme Emacs --type string
+#
+# Some things seem to respect one, some the other, and some
+# neither. With these set, Firefox works as I expect, so I can type in
+# Ravelry and Gmail and so forth. Thunderbird respects some things, but
+# refuses to cough up some important bindings like C-f, C-n, and C-p (it
+# continues to do the Windows actions for these, which is a
+# disaster). So the Thunderbird composer is unsable for me. However,
+# there is something called External Editor
+# (http://globs.org/articles.php?lng=en&pg=2), which allows me to use
+# Emacs to compose messages. You should be able to use it for Vim as
+# well. So if you Thunderbird, don't give up, even if you can't get a
+# GTK vi theme to work.
+
 gtk-key-theme-name = "Emacs"
