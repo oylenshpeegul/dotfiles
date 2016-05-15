@@ -230,8 +230,8 @@
 (use-package git-timemachine)
 
 ;; go get -u github.com/nsf/gocode
-;; go get -u github.com/bradfitz/goimports
-;; go get -u code.google.com/p/rog-go/exp/cmd/godef
+;; go get -u github.com/rogpeppe/godef
+;; go get -u golang.org/x/tools/cmd/goimports
 (use-package go-autocomplete)
 
 (use-package go-mode
