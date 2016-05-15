@@ -204,13 +204,34 @@
   (encourage-mode t))
 (setq encourage-encouragements
   (nconc encourage-encouragements
-    '("Excellent!"
+    '("Aw, yeah!"
+	  "Excellent!"
+      "Fuck, yeah!"
+	  "Hot sandwich!"
+	  "Mein lieber Schwan!"
+	  "Nice!"
+	  "Outstanding!"
+	  "Ossum!"
+	  "Pisser!"
+	  "Quit it!"
       "Scwhanky!"
-      "Uber!")))
+	  "Spanakopita!"
+	  "SPHINX!"
+	  "Supergood!"
+	  "Sweet!"
+	  "That is so Batman!"
+	  "Well done, you!"
+	  "Whoa!"
+	  "Wicked good!"
+	  "Wicked nice!"
+	  "Wicked pisser!")))
 
 ;; https://github.com/pidu/git-timemachine
 (use-package git-timemachine)
 
+;; go get -u github.com/nsf/gocode
+;; go get -u github.com/bradfitz/goimports
+;; go get -u code.google.com/p/rog-go/exp/cmd/godef
 (use-package go-autocomplete)
 
 (use-package go-mode
@@ -220,6 +241,9 @@
 	;; Man, goimports is amazing!
 	(setq gofmt-command "goimports")
 	(add-hook 'before-save-hook 'gofmt-before-save)))
+
+;; go get -u github.com/golang/lint/golint
+(use-package golint)
 
 ;; http://pragmaticemacs.com/emacs/move-through-edit-points/
 (use-package goto-chg
@@ -277,6 +301,9 @@
 			   :password ,(cadr credentials)))))
 	;;))))
 	(setq org2blog/wp-track-posts nil)))
+
+;; For org-reveal
+(use-package ox-reveal)
 
 (use-package ponylang-mode
   :ensure t
