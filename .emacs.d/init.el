@@ -57,10 +57,10 @@
 
 ;; Try getting used to indenting 4, rather than just 2.
 (setq cperl-indent-level 4
-      cperl-close-paren-offset -4
-      cperl-continued-statement-offset 4
-      cperl-indent-parens-as-block t
-      cperl-tab-always-indent t)
+	  cperl-close-paren-offset -4
+	  cperl-continued-statement-offset 4
+	  cperl-indent-parens-as-block t
+	  cperl-tab-always-indent t)
 
 ;; Use CPerl mode for tests and Perl 6 files.
 (add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
@@ -110,12 +110,12 @@
 ;; http://emacs-fu.blogspot.com/2009/02/transparent-emacs.html
 (defun djcb-opacity-modify (&optional dec)
   "modify the transparency of the emacs frame; if DEC is t,
-    decrease the transparency, otherwise increase it in 10%-steps"
+   decrease the transparency, otherwise increase it in 10%-steps"
   (let* ((alpha-or-nil (frame-parameter nil 'alpha)) ; nil before setting
-          (oldalpha (if alpha-or-nil alpha-or-nil 100))
-          (newalpha (if dec (- oldalpha 10) (+ oldalpha 10))))
-    (when (and (>= newalpha frame-alpha-lower-limit) (<= newalpha 100))
-      (modify-frame-parameters nil (list (cons 'alpha newalpha))))))
+		 (oldalpha (if alpha-or-nil alpha-or-nil 100))
+		 (newalpha (if dec (- oldalpha 10) (+ oldalpha 10))))
+	(when (and (>= newalpha frame-alpha-lower-limit) (<= newalpha 100))
+	  (modify-frame-parameters nil (list (cons 'alpha newalpha))))))
 
  ;; C-8 will increase opacity (== decrease transparency)
  ;; C-9 will decrease opacity (== increase transparency
@@ -123,7 +123,7 @@
 (global-set-key (kbd "C-8") '(lambda()(interactive)(djcb-opacity-modify)))
 (global-set-key (kbd "C-9") '(lambda()(interactive)(djcb-opacity-modify t)))
 (global-set-key (kbd "C-0") '(lambda()(interactive)
-                               (modify-frame-parameters nil `((alpha . 100)))))
+							   (modify-frame-parameters nil `((alpha . 100)))))
 
 ;; The Emacs shell command (M-!) is not interactive by default so bash
 ;; will not load your .bashrc.
@@ -195,7 +195,7 @@
 (use-package dired-narrow
   :ensure t
   :bind (:map dired-mode-map
-              ("/" . dired-narrow)))
+			  ("/" . dired-narrow)))
 
 ;; https://oylenshpeegul.wordpress.com/2015/12/07/supergood/
 (use-package encourage-mode
@@ -203,28 +203,28 @@
   :config
   (encourage-mode t))
 (setq encourage-encouragements
-  (nconc encourage-encouragements
-    '("Aw, yeah!"
-	  "Excellent!"
-      "Fuck, yeah!"
-	  "Hot sandwich!"
-	  "Mein lieber Schwan!"
-	  "Nice!"
-	  "Outstanding!"
-	  "Ossum!"
-	  "Pisser!"
-	  "Quit it!"
-      "Scwhanky!"
-	  "Spanakopita!"
-	  "SPHINX!"
-	  "Supergood!"
-	  "Sweet!"
-	  "That is so Batman!"
-	  "Well done, you!"
-	  "Whoa!"
-	  "Wicked good!"
-	  "Wicked nice!"
-	  "Wicked pisser!")))
+	  (nconc encourage-encouragements
+			 '("Aw, yeah!"
+			   "Excellent!"
+			   "Fuck, yeah!"
+			   "Hot sandwich!"
+			   "Mein lieber Schwan!"
+			   "Nice!"
+			   "Outstanding!"
+			   "Ossum!"
+			   "Pisser!"
+			   "Quit it!"
+			   "Scwhanky!"
+			   "Spanakopita!"
+			   "SPHINX!"
+			   "Supergood!"
+			   "Sweet!"
+			   "That is so Batman!"
+			   "Well done, you!"
+			   "Whoa!"
+			   "Wicked good!"
+			   "Wicked nice!"
+			   "Wicked pisser!")))
 
 ;; https://github.com/pidu/git-timemachine
 (use-package git-timemachine)
@@ -249,7 +249,7 @@
 (use-package goto-chg
   :bind (("C-c b ," . goto-last-change)
 		 ("C-c b ." . goto-last-change-reverse)))
-  
+
 (use-package haskell-mode
   :init
   (progn
