@@ -399,3 +399,8 @@
 
 (global-set-key [remap fill-paragraph]
                 #'endless/fill-or-unfill)
+
+
+;; Silly function to insert shrug.
+(defun shrug () (interactive)(insert "¯\\_(ツ)_/¯"))
+(global-set-key (kbd "C-c s") 'shrug)
