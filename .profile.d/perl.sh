@@ -1,4 +1,3 @@
-
 # Put my perl scripts in my PATH.
 if [ -d "$HOME/perl" ] ; then
     PATH="$HOME/perl:$PATH"
@@ -10,20 +9,26 @@ if [ -d "$HOME/perl/lib" ] ; then
 	export PERL5LIB
 fi
 
-# Enable plenv.
-if [ -d "$HOME/.plenv/bin" ] ; then
-    PATH="$HOME/.plenv/bin:$PATH"
-	eval "$(plenv init -)"
-fi
+# Use cpanm to install modules in ~/perl5  with local::lib.
+# wget -O- http://cpanmin.us | perl - -l ~/perl5 App::cpanminus local::lib
+eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`
+MANPATH="$HOME/perl5/man:$MANPATH"
+export MANPATH
 
-# This is for my Perl modules in ~/perl5 (local::lib)
-#PERL_MB_OPT="--install_base \"/home/tim/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/home/tim/perl5"; export PERL_MM_OPT;
-#MANPATH="$HOME/perl5/man:$MANPATH"; export MANPATH;
-# Note: This does not play well with plenv!
+# Make cpanm use https.
+# https://twitter.com/perlbuzz/status/1321813741898530818
+PERL_CPANM_OPT="-M https://cpan.metacpan.org/"
+export PERL_CPANM_OPT
 
-# Enable Rakudobrew
-if [ -d "$HOME/.rakudobrew/bin" ] ; then
-    PATH="$HOME/.rakudobrew/bin:$PATH"
-	export PATH
-fi
+
+# # Enable plenv.
+# if [ -d "$HOME/.plenv/bin" ] ; then
+#     PATH="$HOME/.plenv/bin:$PATH"
+# 	eval "$(plenv init -)"
+# fi
+
+# # Enable Rakudobrew
+# if [ -d "$HOME/.rakudobrew/bin" ] ; then
+#     PATH="$HOME/.rakudobrew/bin:$PATH"
+# 	export PATH
+# fi

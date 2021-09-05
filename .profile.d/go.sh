@@ -1,12 +1,8 @@
-
 # Configure Go
 if [ -d "/usr/local/go/bin" ] ; then
-    PATH="/usr/local/go/bin:$PATH"
+    PATH="$PATH:/usr/local/go/bin"
 fi
 
-# Let's try making my home directory the gopath!
-GOPATH=$HOME
-export GOPATH
-
-
-
+if [ -d "$HOME/go/bin" ] ; then
+    PATH="$PATH:$HOME/go/bin"
+fi
