@@ -1,10 +1,6 @@
-# https://metacpan.org/pod/Data::Printer#CUSTOMIZATION
+# https://metacpan.org/pod/Data::Printer#The-.dataprinter-configuration-file
 
-{
-	hash_separator => ' => ',  # what separates keys from values
-	class => {
-		show_methods => 'none' # 'all', 'none', 'public', 'private'
-	},
+hash_separator = ' => '
+
+class.show_methods = none
  
-};
-   
