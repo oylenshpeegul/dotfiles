@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(package-selected-packages
-   (quote
-    (dired-git-info use-package tuareg toml-mode swift-mode smartparens smart-mode-line-powerline-theme scala-mode ruby-tools rg rainbow-delimiters racer python-black powershell ponylang-mode php-mode parinfer paredit ox-ioslide ox-impress-js org-present multiple-cursors magithub lua-mode julia-mode htmlize haskell-mode golint go-guru go-eldoc go-autocomplete fsharp-mode flycheck-cask erlang encourage-mode elm-mode elixir-mode csharp-mode clojure-mode cask-mode cask cargo)))
+   '(go-mode parinfer-rust-mode company rustic flycheck lsp-mode haskell-mode scala-mode ruby-tools python-black rainbow-delimiters htmlize multiple-cursors rg visual-fill-column org-bullets nov anti-zenburn-theme use-package))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -14,10 +13,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 143 :width normal))))
- '(region ((t (:background "goldenrod")))))
+ '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 151 :width normal)))))
 
-;;; https://www.emacswiki.org/emacs/DotEmacsModular
-;;; Load all ".el" files under ~/.emacs.d/config directory.
-(load "~/.emacs.d/load-directory")
-(load-directory "~/.emacs.d/config")
+(when (>= emacs-major-version 27)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "https://melpa.org/packages/")
+   t)
+
+  ;; https://www.emacswiki.org/emacs/DotEmacsModular
+  (load "~/.emacs.d/load-directory")
+  (load-directory "~/.emacs.d/config"))
+

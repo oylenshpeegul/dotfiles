@@ -11,6 +11,9 @@
 ;; Why is the default 8?
 (setq default-tab-width 4)
 
+;; Don't use tabs for indenting.
+(setq-default indent-tabs-mode nil)
+
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
 
@@ -75,3 +78,6 @@
 
 ;; Does the server start itself or not?
 (server-start)
+
+;; Bind C-c d to describe-char
+(global-set-key (kbd "C-c d") 'describe-char)
