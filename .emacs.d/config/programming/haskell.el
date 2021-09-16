@@ -1,5 +1,5 @@
-(use-package haskell-mode
-  :init
-  (progn
-	(add-hook 'haskell-mode-hook 'haskell-indent-mode)
-	(add-hook 'haskell-mode-hook 'interactive-haskell-mode)))
+(require 'lsp)
+(require 'lsp-haskell)
+;; Hooks so haskell and literate haskell major modes trigger LSP setup
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
