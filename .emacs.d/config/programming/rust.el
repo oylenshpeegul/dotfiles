@@ -1,4 +1,4 @@
-c(use-package rustic)
+(use-package rustic)
 
 (use-package lsp-mode
   :ensure
